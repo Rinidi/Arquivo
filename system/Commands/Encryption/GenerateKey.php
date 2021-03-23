@@ -47,7 +47,7 @@ class GenerateKey extends BaseCommand
 	 *
 	 * @var string
 	 */
-	protected $description = 'Generates a new encryption key and writes it in an `.env` file.';
+	protected $description = 'Generates a new encryption key and writes it in an `..env` file.';
 
 	/**
 	 * The command's options
@@ -55,10 +55,10 @@ class GenerateKey extends BaseCommand
 	 * @var array
 	 */
 	protected $options = [
-		'--force'  => 'Force overwrite existing key in `.env` file.',
+		'--force'  => 'Force overwrite existing key in `..env` file.',
 		'--length' => 'The length of the random string that should be returned in bytes. Defaults to 32.',
 		'--prefix' => 'Prefix to prepend to encoded key (either hex2bin or base64). Defaults to hex2bin.',
-		'--show'   => 'Shows the generated key in the terminal instead of storing in the `.env` file.',
+		'--show'   => 'Shows the generated key in the terminal instead of storing in the `..env` file.',
 	];
 
 	/**
@@ -99,12 +99,12 @@ class GenerateKey extends BaseCommand
 
 		if (! $this->setNewEncryptionKey($encodedKey, $params))
 		{
-			CLI::write('Error in setting new encryption key to .env file.', 'light_gray', 'red');
+			CLI::write('Error in setting new encryption key to ..env file.', 'light_gray', 'red');
 			CLI::newLine();
 			return;
 		}
 
-		// force DotEnv to reload the new env vars
+		// force DotEnv to reload the new .env vars
 		putenv('encryption.key');
 		unset($_ENV['encryption.key'], $_SERVER['encryption.key']);
 		$dotenv = new DotEnv(ROOTPATH);
@@ -135,7 +135,7 @@ class GenerateKey extends BaseCommand
 	}
 
 	/**
-	 * Sets the new encryption key in your .env file.
+	 * Sets the new encryption key in your ..env file.
 	 *
 	 * @param string $key
 	 * @param array  $params
@@ -170,7 +170,7 @@ class GenerateKey extends BaseCommand
 	}
 
 	/**
-	 * Writes the new encryption key to .env file.
+	 * Writes the new encryption key to ..env file.
 	 *
 	 * @param string $oldKey
 	 * @param string $newKey
@@ -179,14 +179,14 @@ class GenerateKey extends BaseCommand
 	 */
 	protected function writeNewEncryptionKeyToFile(string $oldKey, string $newKey): bool
 	{
-		$baseEnv = ROOTPATH . 'env';
-		$envFile = ROOTPATH . '.env';
+		$baseEnv = ROOTPATH . '.env';
+		$envFile = ROOTPATH . '..env';
 
 		if (! file_exists($envFile))
 		{
 			if (! file_exists($baseEnv))
 			{
-				CLI::write('Both default shipped `env` file and custom `.env` are missing.', 'yellow');
+				CLI::write('Both default shipped `.env` file and custom `..env` are missing.', 'yellow');
 				CLI::write('Here\'s your new key instead: ' . CLI::color($newKey, 'yellow'));
 				CLI::newLine();
 				return false;

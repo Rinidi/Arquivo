@@ -1,0 +1,239 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body{
+  background-color: #F8F8F2;
+}
+nav::-webkit-scrollbar, .dropdown-menu::-webkit-scrollbar {
+    width:6px;
+}
+ 
+nav::-webkit-scrollbar-track, .dropdown-menu::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+ 
+nav::-webkit-scrollbar-thumb, .dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.bottom-box{
+	box-shadow: 0px 0px 3px rgba(0,0,0,.5);
+	z-index: 100;
+}
+.block.block-bg-noise, .block.block-bg-noise:after {
+    background: #ededed url(../../content/imagens/bg_noise-bg.png) left top repeat;
+}
+.block.block-pd-sm {
+    padding: 2em 0;
+}
+.social-icon{
+	padding: 15px;
+	border: 1px solid gray;
+	border-radius: 100%;
+}
+.facebook{
+	border: 1px solid #4267b2;
+	background-color: #4267b2;
+	color: white;
+	transition: .3s;
+}
+#facebook h5{
+	color: #4267b2;
+}
+
+#facebook a, #youtube a{
+	color: black;
+	text-decoration: none;
+}
+.youtube{
+	border: 1px solid #ED242D;
+	background-color: #ED242D;
+	color: white;
+	transition: .3s;
+}
+#youtube h5{
+	color: #ED242D;
+}
+#conteiner{
+  margin-top: 5rem;
+}
+#logo{
+  width: 250px;
+}
+.page-link:focus {
+	box-shadow: none;
+}
+ footer{
+ 	      background: #16489C;
+        width: 100%;
+        position: relative;
+        margin-top: 15px;
+        color: aliceblue;
+        display: inline-block;
+        border-top: 3px solid #00933A;
+        box-shadow: 0px 0px 0px 3px #F4D24E;
+ }
+
+    .footer-center {
+        margin: auto;
+    }
+
+
+    .footerClass {
+        margin: auto;
+        width: 310px;
+    }
+
+    .logoFooter{
+        height: 100%;
+        margin-top: 20px;
+    }
+
+    .footerP {
+        border-top: 1px solid #4890de;
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .footerTexto {
+        text-align: center;
+        color: white;
+        font-weight: 100;
+        font-size : 15px;
+ 		line-height: 1.5;
+        margin: 30px 0px 30px 0px;
+        /*deixando um negrito, bem fraco*/
+    }
+
+    .footer-center {
+        margin-top: 0px;
+        /*posicionando os spans do footerXs*/
+        height: 80px;
+        /*tamanho do footer-center*/
+    }
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+.menuFixo{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,2989d8+50,207cca+99,7db9e8+100 */
+background: #1e5799; /* Old browsers */
+background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 99%, #7db9e8 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#207cca 99%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 99%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
+position:fixed;
+top:0;
+width:100%;
+}
+.navbar-nav .active>.nav-link{
+    color: #ffc107 !important;
+}
+.navbar-light .nav-link{
+    color: #f8f9fa !important;
+}
+.dropdown-menu{
+    background-color: #16489C;
+}
+.dropdown-item{
+   color: #f8f9fa;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover{
+    color: #ffc107 !important;
+}
+
+/* This is a compiled file, you should be editing the file in the templates directory */
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: green;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 3px;
+}
+.clearfix::before, .clearfix::after{
+  content: '';
+  display: table;
+}
+.clearfix::after{
+  clear: both;
+}
+.imgPartidosmesa{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  max-width: 35%;
+  max-height: 100px;
+}
+.imgVereadoresmesa{
+  width: 10rem;
+  height: 10rem;
+  margin-top: 4rem;
+  object-fit: cover;
+}
+.menu-lateral{
+    text-align: center;
+}
+.menu-lateral img{
+  display:inline-block;
+  margin: 3px; 
+  width: 150px;
+} 
+.card-topo{
+  padding: .3rem !important;
+}
+.titulo-header-transmissao{
+  background-color: #1e5799;
+  color: #f1f16c;
+  text-shadow: 2px 1px 6px #000000b8;
+}
+.titulo-clima{
+    background-color: #4d991e;
+    color: white;
+}
+.corpo-clima{
+  background-color: #4479ad;
+}
+.btn-card-acess{
+    width: 100%;
+    border-radius: 0px;
+}
+.btn-card-pdf{
+    width: 70%;
+    border-radius: 0;
+}
+.caption-slide-noticias{
+  width: 100%;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0,0,0,.5);
+}
+.caption-noticias-top{
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  padding-top: 5px;
+  padding-bottom: 10px; 
+  background-color: rgba(50,50,50,.7);
+  height: 3.2rem;
+}
+.sessao_title{
+    color: #455a64;
+}
