@@ -30,16 +30,39 @@ class Database extends Config
 	 *
 	 * @var array
 	 */
+
+    /*public $default = [
+        'DSN'  => 'mysql:host=camarabraz3.mysql.dbaas.com.br;port=3306;dbname=camarabraz3',
+        'hostname' => 'mysql:host=camarabraz3.mysql.dbaas.com.br',
+        'username' => 'camarabraz3',
+        'password' => 'Camara@2020',
+        'database' => 'camarabraz3',
+        'DBdriver' => 'pdo',
+        'DBprefix' => '',
+        'pConnect' => FALSE,
+        'db_debug' => (ENVIRONMENT !== 'production'),
+        'cache_on' => FALSE,
+        'cachedir' => '',
+        'char_set' => 'utf8',
+        'DBcollat' => 'utf8_general_ci',
+        'swap_pre' => '',
+        'encrypt' => FALSE,
+        'compress' => FALSE,
+        'stricton' => FALSE,
+        'failover' => array(),
+        'save_queries' => TRUE
+    ];*/
+
 	public $default = [
-		'DSN'      => '',
-		'hostname' => 'localhost',
-		'username' => '',
-		'password' => '',
-		'database' => '',
+		'DSN'      => 'mysql:host=camarabraz3.mysql.dbaas.com.br;port=3306;dbname=camarabraz3',
+		'hostname' => 'camarabraz3.mysql.dbaas.com.br',
+		'username' => 'camarabraz3',
+		'password' => 'Camara@2020',
+		'database' => 'camarabraz3',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,
-		'DBDebug'  => (ENVIRONMENT !== 'production'),
+		'DBDebug'  => (ENVIRONMENT !== 'development'),
 		'charset'  => 'utf8',
 		'DBCollat' => 'utf8_general_ci',
 		'swapPre'  => '',
@@ -47,7 +70,7 @@ class Database extends Config
 		'compress' => false,
 		'strictOn' => false,
 		'failover' => [],
-		'port'     => 3306,
+        'save_queries' => TRUE,
 	];
 
 	/**

@@ -6086,6 +6086,28 @@ File: scss
     .contact-box .contact-widget > a .user-img {
       margin-bottom: 0px !important; }
 
+
+/*
+Estilo da pagina de buscar arquivos
+*/
+
+.titulo__bucador{
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  color: #2b7bab;
+  margin-top: 50px;
+}
+
+.label__form{
+  font-size: 1.2rem;
+}
+.butao__form{
+  color: black;
+  background-color: #317994;
+  border-radius: 10px;
+}
+
+
 /*
 Template Name: Monster Admin
 Author: Themedesigner
