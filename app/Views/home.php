@@ -50,7 +50,7 @@ require_once('template/menu.php');
     if (isset($resultados)){
     if (!empty($resultados)){
     ?>
-    <table class="table table-hover" style="border: 0.1px solid rgba(0,0,0,0.1)">
+    <table class="table table-hover" style="border: 0.1px solid rgba(0,0,0,0.1);text-align: center;">
         <thead>
         <tr>
             <th scope="col"></th>
