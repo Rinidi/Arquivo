@@ -23,7 +23,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $baseURL = 'http://localhost/Buscador_de_arquivos/';
+	public $baseURL = 'http://localhost/Arquivo/';
 
 	/**
 	 * --------------------------------------------------------------------------

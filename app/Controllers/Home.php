@@ -24,7 +24,7 @@ class Home extends BaseController
         echo view('home', $dados);
 	}
 
-    public function buscaArquivos()
+    public function buscar()
     {
         $i = 0;
         // Conexão com banco
@@ -46,7 +46,7 @@ class Home extends BaseController
 
         // Testa se todos os campos estão vazios e retorna uma mensagem
         if(empty($tipo) && empty($num) && empty($ano) && empty($prep)){
-            $consulta_sql = 'Existem muitos arquivos no banco, por favor selecione ao menos 1 filtro';
+            $consulta_sql = 'Por favor selecione ao menos 1 filtro';
             $dados['teste'] = $consulta_sql;
             $this->index($dados);
             return;

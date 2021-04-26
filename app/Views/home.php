@@ -4,7 +4,7 @@ require_once('template/menu.php');
 ?>
 <div class="container">
     <h1 class="titulo__bucador">Buscar Arquivos</h1>
-    <form action="<?php echo base_url() ?>/public/Home/buscaArquivos" method="post">
+    <form action="buscar" method="post">
         <div class="row">
             <div class="col-12 col-xl-3 col-lg-4 col-md-6 col-sm-10">
                 <div class="form-group">
@@ -122,7 +122,7 @@ require_once('template/menu.php');
                 <td class="res_col"><?= $resultado['nome_preponente'];?></td>
                 <td class="res_col">
                     <a type="button" data-toggle="collapse" data-target="#ver_mais_<?=$resultado['id'];?>" aria-expanded="false" aria-controls="collapseExample">
-                        <img onclick='troca_imagem(this)'id="seta_baixo" src="../../content/imagens/seta_baixo.png" class="seta">
+                        <img onclick='troca_imagem(this)'id="seta_baixo" src="../content/imagens/seta_baixo.png" class="seta">
                     </a>
                 </td>
                 <td class="res_col" style="display: none;"><?= $resultado['descricao'];?></td>
