@@ -1,0 +1,31 @@
+.resultado{
+    margin-bottom: 100px;
+}
+td.res_col{
+    align-items: center;
+    vertical-align: center;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.resultado_descricao{
+    text-align: justify;
+    margin: 5px 20px 5px 20px;
+}
+.botao_ver{
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+.botao_baixar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.seta{
+    width: 1.5rem;
+    height: 1.5rem;
+    background: url("../../content/imagens/seta_baixo.png");
+}
+.seta:hover{
+    cursor: pointer;
+}

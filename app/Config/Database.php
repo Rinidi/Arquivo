@@ -55,10 +55,10 @@ class Database extends Config
 
 	public $default = [
 		'DSN'      => 'mysql:host=camarabraz3.mysql.dbaas.com.br;port=3306;dbname=camarabraz3',
-		'hostname' => 'camarabraz3.mysql.dbaas.com.br',
-		'username' => 'camarabraz3',
-		'password' => 'Camara@2020',
-		'database' => 'camarabraz3',
+		'hostname' => 'camara_arquivo.mysql.dbaas.com.br',
+		'username' => 'camara_arquivo',
+		'password' => 'Camara@2021',
+		'database' => 'camara_arquivo',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,

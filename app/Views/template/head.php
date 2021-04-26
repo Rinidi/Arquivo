@@ -18,15 +18,18 @@
 		<?= link_tag('assets/css/bootstrap.min.css') ?>
 		<?= link_tag('assets/css/camara.css') ?>
 		<?= link_tag('assets/css/style.css') ?>
-		<?= link_tag('assets/css/normalize.css') ?>
+        <?= link_tag('assets/css/normalize.css') ?>
 		<?= link_tag('assets/css/all.css') ?>
 		<?= link_tag('assets/css/bootstrap.offcanvas.min.css') ?>
 		<?= link_tag('content/imagens/logo_oficial.jpg', 'shortcut icon', 'image/png') ?>
+        <link href="<?=base_url('assets/css/buscador.css')?>" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<script type="text/javascript" language="javascript" src='<?php echo base_url();?>/assets/js/jquery-3.1.1.min.js'></script>
 		<script type="text/javascript" language="javascript" async src='<?php echo base_url();?>/assets/js/bootstrap.offcanvas.js'></script>
 		<script type="text/javascript" language="javascript" async src='<?php echo base_url();?>/assets/js/bootstrap.min.js'></script>
 		<script type="text/javascript" language="javascript" async src='<?php echo base_url();?>/assets/js/pace.min.js'></script>
-		<script type="text/javascript" language="javascript" async src='<?php echo base_url();?>/assets/js/js.js'></script>
+        <script type="text/javascript" language="javascript" async src='<?php echo base_url();?>/assets/js/js.js'></script>
+        <script type="text/javascript" language="javascript" async src='<?php echo base_url();?>/assets/js/style.js'></script>
 		<script type="text/javascript">
 			var _paq = _paq || [];
 			_paq.push(['trackPageView']);

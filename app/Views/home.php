@@ -9,37 +9,86 @@ require_once('template/menu.php');
             <div class="col-12 col-xl-3 col-lg-4 col-md-6 col-sm-10">
                 <div class="form-group">
                     <label class="label__form" for="exampleFormControlSelect1">Tipo de arquivo</label>
-                    <select name="tabela" class="form-control" id="exampleFormControlSelect1">
-                        <option value="pedidos">Pedido de Providência</option>
-                        <option value="sessoes">Atas das Sessões</option>
-                        <option value="projeto_lei">Projeto de Lei</option>
-                        <option value="projeto_executivo">Projeto do executivo</option>
-                        <option value="RI">Requerimento de Informação</option>
+                    <select name="tipo" class="form-control" id="exampleFormControlSelect1">
+                        <option value="" selected >Todos</option>
+
+                        <!--Lógica para manter os dados submetidos no form-->
+                        <?php foreach ($tipos as $tipo):?>
+                            <?php if(isset($id_tipo_selecionado)):?>
+                                <?php if($tipo->id==$id_tipo_selecionado):?>
+                                    <option value="<?=$tipo->id;?>" selected="selected"><?=$tipo->nome;?></option>
+                                <?php else:?>
+                                    <option value="<?=$tipo->id;?>"><?=$tipo->nome;?></option>
+                                <?php endif;?>
+                            <?php else:?>
+                                <option value="<?=$tipo->id;?>"><?=$tipo->nome;?></option>
+                            <?php endif;?>
+                        <?php endforeach;?>
                     </select>
                 </div>
             </div>
             <div class="col-12 col-xl-3 col-lg-4 col-md-6 col-sm-10">
                 <div class="form-group">
                     <label class="label__form" for="exampleFormControlSelect1">Ano</label>
-                    <input name="ano" class="form-control" type="number" min="2009" max="2021" value="2021"
-                           id="example-number-input">
-                    <!--<select name="ano" class="form-control" id="exampleFormControlSelect1">
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2016">2016</option>
-                        <option value="2015">2015</option>
-                    </select>-->
+                    <select name="ano" class="form-control">
+                        <option value="" selected >Todos</option>
+
+                        <!--Lógica para manter os dados submetidos no form-->
+                        <?php foreach ($anos as $ano):?>
+                            <?php if(isset($ano_selecionado)):?>
+                                <?php if($ano==$ano_selecionado):?>
+                                    <option value="<?=$ano;?>" selected="selected"><?=$ano;?></option>
+                                <?php else:?>
+                                    <option value="<?=$ano;?>"><?=$ano;?></option>
+                                <?php endif;?>
+                            <?php else:?>
+                                <option value="<?=$ano;?>"><?=$ano;?></option>
+                            <?php endif;?>
+                        <?php endforeach;?>
+                    </select>
                 </div>
             </div>
-            <!--<div class="col-12 col-xl-3 col-lg-4 col-md-6 col-sm-10">
+<!--            <div class="col-12 col-xl-3 col-lg-4 col-md-6 col-sm-10">-->
+<!--                <div class="form-group">-->
+<!--                    <label class="label__form" for="exampleFormControlSelect1">Número</label>-->
+<!--                    <select name="numero" class="form-control">-->
+<!--                        <option value="" selected >Todos</option>-->
+<!--                        Lógica para manter os dados submetidos no form-->
+<!--                        --><?php //foreach ($numeros as $num):?>
+<!--                            --><?php //if(isset($num_selecionado)):?>
+<!--                                --><?php //if($num==$num_selecionado):?>
+<!--                                    <option value="--><?//=$num;?><!--" selected="selected">--><?//=$num;?><!--</option>-->
+<!--                                --><?php //else:?>
+<!--                                    <option value="--><?//=$num;?><!--">--><?//=$num;?><!--</option>-->
+<!--                                --><?php //endif;?>
+<!--                            --><?php //else:?>
+<!--                                <option value="--><?//=$num;?><!--">--><?//=$num;?><!--</option>-->
+<!--                            --><?php //endif;?>
+<!--                        --><?php //endforeach;?>
+<!--                    </select>-->
+<!--                </div>-->
+<!--            </div>-->
+            <div class="col-12 col-xl-3 col-lg-4 col-md-6 col-sm-10">
                 <div class="form-group">
-                    <label class="label__form" for="exampleFormControlSelect1">Número</label>
-                    <input name="numero" class="form-control" type="number" min="1" value="1" id="example-number-input">
+                    <label class="label__form" for="exampleFormControlSelect1">Preponentes</label>
+                    <select name="prep" class="form-control" id="exampleFormControlSelect1">
+                        <option value="" selected >Todos</option>
+
+                        <!--Lógica para manter os dados submetidos no form-->
+                        <?php foreach ($preponentes as $preponente):?>
+                            <?php if(isset($id_prep_selecionado)):?>
+                                <?php if($preponente->id==$id_prep_selecionado):?>
+                                    <option value="<?=$preponente->id;?>" selected="selected"><?=$preponente->nome;?></option>
+                                <?php else:?>
+                                    <option value="<?=$preponente->id;?>"><?=$preponente->nome;?></option>
+                                <?php endif;?>
+                            <?php else:?>
+                                <option value="<?=$preponente->id;?>"><?=$preponente->nome;?></option>
+                            <?php endif;?>
+                        <?php endforeach;?>
+                    </select>
                 </div>
-            </div>-->
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Buscar</button>
     </form>
@@ -50,32 +99,47 @@ require_once('template/menu.php');
     if (isset($resultados)){
     if (!empty($resultados)){
     ?>
-    <table class="table table-hover" style="border: 0.1px solid rgba(0,0,0,0.1);text-align: center;">
+    <table class="table table-bordered" style="border: 0.1px solid rgba(0,0,0,0.1);text-align: center;">
         <thead>
         <tr>
-            <th scope="col"></th>
+            <th scope="col" style="width: 5%;"></th>
             <th scope="col">Nome</th>
             <th scope="col">Data</th>
-            <th scope="col">Vereador</th>
+            <th scope="col">Preponente</th>
             <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
         <?php foreach ($resultados as $resultado): ?>
             <tr>
-                <td>
-                    <div style='font-size:2em; color:Tomato;'>
+                <td class="res_col">
+                    <div style='font-size:1.5em; color:Tomato;'>
                         <i class='fas fa-file-pdf fa-1x'></i>
                     </div>
                 </td>
-                <td><?= $resultado['nome']; ?></td>
-                <td><?= $resultado['data_publicacao']; ?></td>
-                <td>Adilson de Paula</td>
-                <td>
-                    <a href='#' class='btn btn-info' target='_blank'>
-                        <i class='fas fa-cloud-download-alt'></i>
-                        Baixar
+                <td class="res_col"><?= $resultado['nome']; ?></td>
+                <td class="res_col"><?= formatar_data($resultado['data_publicacao']); ?></td>
+                <td class="res_col"><?= $resultado['nome_preponente'];?></td>
+                <td class="res_col">
+                    <a type="button" data-toggle="collapse" data-target="#ver_mais_<?=$resultado['id'];?>" aria-expanded="false" aria-controls="collapseExample">
+                        <img onclick='troca_imagem(this)'id="seta_baixo" src="../../content/imagens/seta_baixo.png" class="seta">
                     </a>
+                </td>
+                <td class="res_col" style="display: none;"><?= $resultado['descricao'];?></td>
+            </tr>
+            <tr class="collapse" id="ver_mais_<?=$resultado['id'];?>">
+                <td colspan="5">
+                    <div class="row">
+                        <div class="col col-xl-10 col-md-10 col-12">
+                            <div class="resultado_descricao">
+                                <h4>Descrição <?= $resultado['nome']; ?>:</h4>
+                                <?= $resultado['descricao'];?>
+                            </div>
+                        </div>
+                        <div class="col col-xl-2 col-md-2 col-12 botao_baixar">
+                            <a href="<?php echo base_url('content/arquivos/'. $resultado['caminho'])?>" class='btn btn-primary' target='_blank' style=""><i class='fas'></i>Baixar</a>
+                        </div>
+                    </div>
                 </td>
             </tr>
         <?php
@@ -85,6 +149,7 @@ require_once('template/menu.php');
         }
         }
         ?>
+        <?php if(isset($teste)){echo "<h3>$teste</h3>";}?>
         </tbody>
     </table>
 </div>
